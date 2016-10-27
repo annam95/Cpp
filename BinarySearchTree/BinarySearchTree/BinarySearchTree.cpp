@@ -60,6 +60,18 @@ public:
 			else { right_m.contains(value); }
 		}
 	}
-	void printInOrder();
+
+	void printInOrder()
+	{
+		if (left_m != nullptr)
+		{
+			left_m.printInOrder();
+		}
+		printInOrder();
+		if (right_m != nullptr)
+		{
+			right_m.printInOrder();
+		}
+	}
 };
 
