@@ -21,7 +21,7 @@ public:
 			}
 			else
 			{
-				*left_m.insert(value);
+				left_m.insert(value);
 			}
 		}
 		else if (value > value_m)
@@ -32,7 +32,7 @@ public:
 			}
 			else
 			{
-				*right_m.insert(value);
+				right_m.insert(value);
 			}
 		}
 		else
@@ -41,9 +41,24 @@ public:
 		}
 	}
 
-	bool contains(int value);
+	bool contains(int value)
 	{
+		if (value == value_m)
+		{
+			return true;
+		}
+		
+		else if (value < value_m)
+		{
+			if (left_m == nullptr) { return false; }
+			else { left_m.contains(value); }
+		}
 
+		else
+		{
+			if (right_m == nullptr) { return false; }
+			else { right_m.contains(value); }
+		}
 	}
 	void printInOrder();
 };
