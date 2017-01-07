@@ -9,9 +9,10 @@ using namespace std;
 class Node
 {
 private:
+	int value_m;
 	Node* left_m;
 	Node* right_m;
-	int value_m;
+	
 public:
 	void insert(int value)
 	{
@@ -49,7 +50,7 @@ public:
 		{
 			return true;
 		}
-		
+
 		else if (value < value_m)
 		{
 			if (left_m == nullptr) { return false; }
@@ -69,7 +70,7 @@ public:
 		{
 			left_m->printInOrder();
 		}
-		
+
 		cout << value_m;
 
 		if (right_m != nullptr)
@@ -77,5 +78,25 @@ public:
 			right_m->printInOrder();
 		}
 	}
+
+	void printpreOrder()
+	{
+		cout << value_m;
+		if (left_m != nullptr)
+		{
+			left_m->printpreOrder();
+		}
+		if (right_m != nullptr)
+		{
+			right_m->printpreOrder();
+		}
+	}
 };
+
+int main(void)
+{
+
+}
+
+
 
